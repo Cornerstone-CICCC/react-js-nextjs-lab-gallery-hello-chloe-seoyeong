@@ -13,14 +13,19 @@ const page = async ({ params }: Props) => {
   const res = await fetch(`http://localhost:3000/api/gallery/${id}`);
   const data: ArtworkType = await res.json();
 
+  const updatedData = {
+    ...data,
+    url: "https://placehold.co/1000x1000",
+  };
+
   return (
     <div className="flex flex-col gap-4 justify-center items-center">
-      <p>{data.title}</p>
+      <p>{updatedData.title}</p>
       <Image
-        src={"https://placehold.co/1000x1000"}
+        src={updatedData.url}
         width={1000}
         height={1000}
-        alt={data.title}
+        alt={updatedData.title}
         loading="lazy"
       />
     </div>
