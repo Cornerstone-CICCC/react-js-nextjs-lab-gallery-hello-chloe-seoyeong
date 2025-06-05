@@ -5,17 +5,16 @@ type Props = {
   artworkItem: ArtworkType;
 };
 
-export const THUMBNAIL_URL = "https://placehold.co/300x300";
-
 const Artwork = ({ artworkItem }: Props) => {
   return (
     <div>
       <Image
         width={150}
         height={150}
-        src={THUMBNAIL_URL}
+        src={artworkItem.thumbnailUrl}
         alt={artworkItem.title}
         className="bg-gray-200/50"
+        priority={artworkItem.id < 10 ? true : false}
       />
     </div>
   );
