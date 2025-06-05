@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -23,9 +24,9 @@ const Page = async ({ params }: Props) => {
           height={600}
           alt={updatedData.title}
         />
-        <a href={"/gallery"} className="underline pt-3">
+        <Link href={"/gallery"} className="underline pt-3">
           Close
-        </a>
+        </Link>
       </div>
     </div>
   );
