@@ -16,7 +16,7 @@ const page = async () => {
       <h1 className="text-center p-5">Gallery</h1>
       <div className="flex flex-wrap gap-6 justify-center">
         {artworks.map((item) => (
-          <Link key={item.id} href={`/gallery/${item.id + ""}`}>
+          <Link key={item.id} href={`/gallery/${item.id + ""}`} scroll={false}>
             <Artwork artworkItem={item} />
           </Link>
         ))}

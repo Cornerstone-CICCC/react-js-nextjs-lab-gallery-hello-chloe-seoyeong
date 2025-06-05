@@ -14,6 +14,7 @@ const Artwork = ({ artworkItem }: Props) => {
         src={artworkItem.thumbnailUrl}
         alt={artworkItem.title}
         className="bg-gray-200/50"
+        priority={artworkItem.id < 10 ? true : false}
       />
     </div>
   );
